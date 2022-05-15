@@ -1,12 +1,12 @@
-package io.github.syakuis.config;
+package io.github.syakuis.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.github.syakuis.config.support.SimpleObjectMapper
+import io.github.syakuis.configuration.support.SimpleObjectMapper
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
-@Configuration
-class BasicBeanConfiguration {
+@Configuration(proxyBeanMethods = false)
+class CommonBeanConfiguration {
     @Bean
     fun objectMapper(): ObjectMapper {
         return SimpleObjectMapper.of(ObjectMapper())
